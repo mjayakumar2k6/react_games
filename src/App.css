@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -35,4 +35,101 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  padding: 2px;
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.grid {
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);  
+  margin: 20px auto;
+}
+.grid-inner {
+  cursor: pointer;
+}
+.flip-card-back, .flip-card-front {
+  width: 96px;
+  height: 96px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.flip-card-front svg {
+  color: #e5e1e1;
+  height: 50% !important;
+  width: 50% !important; 
+  pointer-events: none; 
+}
+
+.flip-card-back svg.svg-inline--fa.fa-w-16 {
+  height: 20% !important;
+  width: 20% !important;   
+}
+.flip-card-back svg.svg-inline--fa.fa-9x {
+  width: 60% !important;
+  height: 60% !important;
+  pointer-events: none; 
+}
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card.flip .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.red {
+  color: red;
+}
+.moves-section {
+  width: 400px;
+  display: flex;
+  margin: auto;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.moves-section .moves .span-count{
+  font-size: 20px;
 }
