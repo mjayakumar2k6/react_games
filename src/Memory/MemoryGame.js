@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 import React, { useState } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -42,8 +42,12 @@ function MemoryGame() {
     const [sameCard, setSameCard] = useState([...c]);
   
     function flipMe(event, d, i) {  
-      if(moves === 0 || flippedCard.length === 2)  {
+      if(moves === 0)  {        
         return;
+      }
+      if(flippedCard.length === 2) {
+        //resolveOnThridCardOpen(); 
+        return;     
       }
       let m = moves - 1;
       setMoves(m);
@@ -89,7 +93,7 @@ function MemoryGame() {
               }, 2000);
             }
           }        
-        }, 1000);
+        }, 500);
   
         setTimeout(() => {
           c1.flip = false;
@@ -97,10 +101,11 @@ function MemoryGame() {
           setCards(cards);
     
           setFlippedCards([]);
-        }, 3000);      
+        }, 2000);      
       }    
       
     }
+
   
     function playAgain(size) {
       let c = shuffle([...icons]);

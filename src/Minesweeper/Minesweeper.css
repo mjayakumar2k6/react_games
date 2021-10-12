@@ -21,6 +21,10 @@ table {
     font-weight: bold;
 
 }
+table.medium td {
+    width: 30px !important;
+    height: 30px !important;
+}
 td {
     cursor: pointer;
 
@@ -59,4 +63,25 @@ tr td.opened {
 }
 .bomb-3 {
     color: green;
+}
+.time {
+    display: flex;
+    align-items: center;    
+}
+.time svg {
+    margin-left: 10px;
+    width: 40px !important;
+    height: 40px !important;    
+}
+.playagain {
+    padding: 10px;
+    background-color: #0f014f;
+    color: #f1f1f1;
+    margin: 10px 0;
+    border: none;
+}
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
